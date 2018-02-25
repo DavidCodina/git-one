@@ -1,0 +1,553 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Test</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+    
+<body>
+	<div id="pseudo_body">
+    
+    <header>
+        <div class="wrapper">
+            <h1 id="logo">GitHub Test</h1>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">Clients</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	
+	<main>
+		<section>
+	
+		
+		</section>
+	</main>
+    
+</div>
+</body>
+
+</html>
+
+<!-- ============================================================================================================================================================
+
+============================================================================================================================================================= -->
+<!-- Based on Tutorial 1: https://www.youtube.com/watch?v=3RjQznt-8kE&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR 
+
+
+
+What is Git?
+Git is a distributed version control system. That basically means that it's a system that records changes to our files over time.
+We can recall specific versions of those files at any given time.
+Many people can easily collaborate on a project an d have their own version of the project files on their computer.
+Git allows you to store revisions in a project history in just one directory.
+It allows us to rewind to any revision in project.
+It allows us to work on new features without messing up the main codebase (i.e., branching)
+It allows us to easily collaborate with other programmers.
+		
+		-Online service that host our projects
+		-Share our code with other developers
+		-Developers can download the projects and work on them.
+		-They can re-upload their edits and merge them with the main codebase.
+-->
+
+
+
+
+
+
+
+<!-- Based on Tutorial 2: https://www.youtube.com/watch?v=MFtsLRphqDM&index=2&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR 
+
+It goes over downloading git...
+Next we open up the command line, and run git --version to double-check that we have it installed.
+Next he goes over setting up a couple of optionss for Git: the username, and user email.
+When we begin making changes in Git, it's going to want to know who is making those changes, so it can keep track of it.
+
+	git config --global user.name DavidCodina
+	git config --global user.email davidmcodina@hotmail.com
+
+
+I did not actually do these things because it's already set up
+
+	git config user.name		(returns: 	David Codina)
+	git config user.email		(returnds: 	davidmcodina@hotmail.com)
+
+
+
+Next he walks us through a few basic commands.
+
+To change directories:
+
+	cd .. 							takes us up a level (with space).
+	cd David_Codina					takes us back into the David_Codina directory.
+	ls								lists the contents of the current directory.
+	mkdir test						Makes a new folder named test.
+	touch index.html				Makes an index.html file within the current directory (touch doesn't work on windows.)
+	Atom index.html					Opens the file in Atom
+	open -a TextMate index.html		Opens the file in Textmate.
+	rm index.html 					Deletes the file.
+	rmdir							Deletes the test folder (assuming we're at that directory.)
+-->
+
+
+
+
+
+
+
+<!-- Based on Tutorial 3: https://www.youtube.com/watch?v=iNP_KmOFqXs&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=3
+
+In this tutorial we discuss how Git works.
+
+What is a repo?
+A repo (repository ) is a container for a project you want to track with Git (e.g., a website project)
+We can have many different repos for many different projects on our computer.
+A repository can be local (stored on your computer), or remote (stored within an online service -like Github)
+Like a project folder which Git tracks the contents for us.
+Each repo is tracked independently.
+
+For example, we might have a project that looks like this:
+
+
+myProject
+		.git
+		index.html
+		styles.css
+		images (folder)
+			logo.png
+			crazy_cat.png
+		...
+
+
+A surefire sign that this folder is a repository and being tracked is the .git file.
+(I'm not sure, but this may be invisible on a mac. We may need to CMD + Shift + . to see it.)
+Because .git is at the root level of the project, it means that Git will track changes to any file in this folder.
+If for some reasong .git was in a subfolder, it would only track changes the extend from there.
+
+
+What is a commit?
+Commits are a bit like safe points in video games. Say we're building out our index.html file, and we
+finish the header. This is a logical point in which to create a commit. So what we do is commit the state
+of our code and files at that one particular time to the commit history. Down the line we might finish another
+major section, and we make another commit. Let's say we make five different commits, then after commit 5 we say,
+"Actually, I'd like to rewind and go back to how it was at the fourth commit." I want to go back to one of the 
+save points. We can do that using Git because we have a commit history. We can roll back the code to any 
+different commit in the commit history. It's tracking our different revisions of the code as we go along.
+With Git working in this fashion, it would be very difficult to ever lose our progress.
+
+
+Before we make an actual repository, let's talk about these three stages: Modified | Staging | Committed
+
+
+We've got our project folder, and we make some changes to index.html. Those changes are now in the modified stage, whereby
+the file has been changed but not committed. If we decide that we want to commit the files, then we can add the file to the
+staging area. What that says to Git is, "When I make a commit, the changes I make to this index.html file... I want that to be
+included in the commit."
+
+For example, say we change both index.html, and style.css. We are now in the modified stage. Now we want to stage them, and
+we do that (?), so that when we create a commit, those file changes are going to be committed, and a snapshot of those files is 
+going to be added into the commit history. 
+
+When we begin a repository in the most basic form, we have one branch, but it is possible to have mulitiple branches.
+That will be discussed later. This allows us to work on new features without ever altering the code of the master branch.
+
+We are now ready to create our very first repository
+-->
+
+
+
+
+
+<!-- Based on Tutorial 4: https://www.youtube.com/watch?v=v0Ch3yWQ-Zc&index=4&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR
+
+In this tutorial we create our very first repository.
+For this tutorial two directories were created:
+				
+							git-one
+							git-two
+
+We will create a repository in each of these directories in a minute...
+
+To create a repository, we navigate to the git-one directory, then type:
+
+	git init
+
+This initializes an empty git repository.
+If we were to then look at that folder manually, and type CMD + Shift + .   we would see the .git folder.
+Now Git will track any changes we make to the project inside of that folder.
+
+Note: the project folder doesn't have to be empty for us to create a repository.
+We can create a repository which already has files in it. 
+
+In the next tutorial we will edit files and add them to the staging area.
+-->
+
+
+
+
+
+
+<!-- Based on Tutorial 5: https://www.youtube.com/watch?v=KngvG8WzYLU&index=5&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR
+
+In this tutorial, we discuss staging files.
+In Atom green files indicate that they have been changed, but not committed.
+That means that it's sitting in a 'modified zone'.
+If we created a commit right now, it wouldn't actually committ anything.
+What a commit does is take everythin from the staging area, and create a committ from that.
+Currently, all we've done is modify a file. We've not added it to the staging area.
+
+Here is a command to show which files are currently in the staging area, waiting to be committed.
+
+		git status
+
+
+It presently returns the following:
+
+		On branch master
+
+		Initial commit
+
+		Untracked files:
+	  		(use "git add <file>..." to include in what will be committed)
+
+			.DS_Store
+			index.html
+			style.css
+
+		nothing added to commit but untracked files present (use "git add" to track)
+
+This shows us which files we have changed, and which files are in the staging area.
+
+						In the Apple macOS operating system, .DS_Store is a file that stores c
+						ustom attributes of its containing folder, 
+						such as the position of icons or the choice of a background image
+
+
+The three files are colored red to indicate that they have been changed, but are not yet staged.
+If we want to stage them, all we need to do is say: git add ... (name of file.)
+
+	git add index.html
+
+So now after doing that if we type git status we get:
+
+
+	On branch master
+
+	Initial commit
+
+	Changes to be committed:
+  		(use "git rm --cached <file>..." to unstage)
+
+		new file:   .DS_Store
+		new file:   index.html
+
+Now everything is in green.
+So if we ran a git commit now, it would commit these files.
+
+
+How do we unstage files?
+Sometimes, we add files to the staging area that we don't necessarily mean to. This will remove it.
+
+	git rm --cached index.html
+
+
+
+Imagine we have a large project and we change 20 files.
+To go through and type git add ... for every file can be tedious.
+There's a shortcut. If we change a bunch of files, and want to add them all to the staging area we can type:
+
+	git add .
+
+So now if we do a commit, it will add all the files.
+
+
+
+
+
+You might be thinking, "What on Earth is the point of having a staging area? Why don't we just commit straight away?"
+The reason is that it's an extra blanket of security.
+If we're making changes, we don't want to just commit them to hastily.
+By adding them to this staging area, it allows us to review our changes before we do whut? .... commmit to them.
+Committing is not something we should be doing all over the place.
+We should only be doing it at very distinct points.
+
+Another reason is that we can split our work up into separate commits.
+Imagine that you are managing a website and there's two bugs on it.
+We want to fix both bugs at the same time, so we change two files: one for each bug.
+However, we might not want to bundle those changes together in the same commit.
+What we can do is stage one of the files, and then commit that.
+Then stage one of the other files and commit that.
+This allows us to split our work up and make different commits for different changes.
+
+
+In the next tutorial, we will look at actually making commits.
+-->
+
+
+
+
+
+<!-- Based on Tutorial 6: https://www.youtube.com/watch?v=Fhgga2s_RmM&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=6
+
+In this tutorial we look at making commits.
+
+So far we've modified index.html, and styles.css, and we've staged them.
+Now they're ready to be committed, they're ready be added to the commit history.
+A commit is basically just like a save point.
+In order to make a commit, we simply say:
+
+
+	git commit -m "added index.html and styles.css"
+
+
+-m indicates that we are passing a message. The message is in double quotes. It needs to be a descriptive message about what
+the commit is. For example, if you were fixing a bug you might say "fixed bug in header", NOT "fixed a load of crap".
+In other words, make sure that they are sufficiently descriptive because you will be using them for future reference.
+
+
+After entering the above command, we get the following message back:
+
+
+	[master (root-commit) ef2ea75] added index.html and styles.css
+ 		3 files changed, 488 insertions(+)
+ 		create mode 100644 .DS_Store
+ 		create mode 100644 index.html
+ 		create mode 100755 styles.css
+
+We've made the commit on the master branch.
+The id is ef2ea75
+3 files have been changed, and there have been 488 insertions (insertions are the different lines of code).
+
+
+Now for the purposes of this tutorial, we are going to make a couple of other commits, so that we can review the commit history.
+In order to make the file visibly different, I will change the color of the h1 selector in the CSS to blue.
+Now I add it to the staging area, check it, and then commit it.
+
+	git add .
+	git status
+	git commit -m "changed the h1 heading to blue"
+
+Command line output:
+
+	[master a058bc4] changed the h1 heading to blue
+	 2 files changed, 20 insertions(+)
+
+Now let's change the heading to green, and commit again.
+
+	git add .
+	git commit -m "changed the h1 heading to green"
+
+Command line output:
+
+	[master a252a9d] changed the h1 heading to green
+	 2 files changed, 13 insertions(+), 2 deletions(-)
+
+Note: If we change a line, Git considers that line deleted, and re-added.
+
+
+Just to really drive the point home, the tutorial does one more commit, so
+in this instance I will change to h1 to red, and commit again.
+
+	git add .
+	git commit -m "changed the h1 heading to red"
+
+Command line output:
+
+	[master 15fb49f] changed the h1 heading to red
+ 	2 files changed, 16 insertions(+), 1 deletion(-)
+
+
+So now we've made 3 commits, and we've got these 3 different snapshots in time on our master branch.
+What do we do if we want to see this commit history?
+
+	git log
+
+
+Command line output:
+
+
+	commit 15fb49f935c224af0fb65424ff4be66856dc82ca
+	Author: David Codina <davidmcodina@hotmail.com>
+	Date:   Sun Feb 25 12:28:54 2018 -0700
+
+	    changed the h1 heading to red
+
+	commit a252a9d651a985c6ba789f769b0653a45593aad7
+	Author: David Codina <davidmcodina@hotmail.com>
+	Date:   Sun Feb 25 12:24:54 2018 -0700
+
+	    changed the h1 heading to green
+
+	commit a058bc4367adbbfa7ffd125dec4f606e985fef34
+	Author: David Codina <davidmcodina@hotmail.com>
+	Date:   Sun Feb 25 12:22:28 2018 -0700
+
+	    changed the h1 heading to blue
+
+	commit ef2ea753351a38c84386433197395cb74d77d134
+	Author: David Codina <davidmcodina@hotmail.com>
+	Date:   Sun Feb 25 12:14:47 2018 -0700
+
+	    added index.html and styles.css
+
+
+Above we see four commits. The first commit shown is the most recent commit submitted.
+Previously, after making a commit the comman line returned an id: [master 15fb49f]
+That was actually the first few symbols. In the log output we actually get the full id: 15fb49f935c224af0fb65424ff4be66856dc82ca
+Each log entry indicates whose made the commit, the email, and when the commit was made.
+Additionally, we have the message we created indicating what was committed.
+Cool.
+However, if you've got 50 commits, it may be TMI, you might just want to see a condensed log output you can type:
+
+	git log --oneline
+
+Command line output:
+
+	15fb49f changed the h1 heading to red
+	a252a9d changed the h1 heading to green
+	a058bc4 changed the h1 heading to blue
+	ef2ea75 added index.html and styles.css
+
+This reduces each commit down to a single line.
+
+
+-->
+
+
+
+
+
+<!-- Based on Tutorial 7: https://www.youtube.com/watch?v=RIYrfkZjWmA&index=7&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR
+
+In this video we look at how to undo stuff for when it all goes wrong.
+Up to this point we've made several commits to our master branch.
+Now we want to look at how to undo things if you've made mistakes, or just if you want to...
+We will look at three different methods: 
+
+		checkout commit
+		revert commit
+		reset commit
+
+
+They are listed in the order of danger. Checkout commit is not dangerous.
+Revert commit is safe, but potentially not quite as safe.
+Reset commit is unsafe. Be sure you need to use this before you do because it could potentially ruine your repo.
+
+
+checkout commit:
+
+	Say you want to see what the code was like a couple of commits earlier.
+	We can use checkout commit.
+	It will show us in our text editor the code at that point in time.
+	However, any changes we make while checking out that commit will not be saved. It's read only.
+	It will not allow us to alter or destroy the commit history in any way.
+
+revert commit:
+
+	This let's us undo a particular commit.
+	It's almost like it deletes it from the commit chain.
+	It doesn't actually delete it (as we'll see later.), but the result is the same: it's like it never existed.
+
+reset commit:
+
+	Permanently takes us back in time to a particular commmit.
+	This implies that we will NEVER use the more recent commits.
+	When you reset to a particular commit, it will permanently delete all commits that succeeded it.
+
+
+
+
+We will look at examples of all three of these instances.
+For the sake of this tutorial we will add two more commits.
+
+	git add .
+	git commit -m "changed the h1 heading to orange"
+	
+	
+	
+	git add .
+	git commit -m "changed the h1 heading to purple"
+	git log --oneline
+
+Command line output:
+
+	b255ad7 changed the h1 heading to purple
+	32acd53 changed the h1 heading to orange
+	15fb49f changed the h1 heading to red
+	a252a9d changed the h1 heading to green
+	a058bc4 changed the h1 heading to blue
+	ef2ea75 added index.html and styles.css
+
+
+
+
+Now let's start rewinding.
+Presently the heading is purple. Let's say we wanted to just see what the code was like back at 32acd53
+We can use checkout to do that. Note: It seems that it won't let us do this until everything is up to date, i.e., all current modifications have been staged and committed.
+
+	git checkout 32acd53
+
+Now to get back to the top of the stack, we type:
+
+	git checkout master
+
+
+Now for git revert. This will undo one particular commit. So, let's say we gave our heading font-family: "Comic Sans MS" in one commit, and a color of pink in the next commit. 
+
+
+	8fdb224 made h1 pink
+	bc7d994 Gave h1 Comic Sans MS
+	462ba9e last commit before test
+	...
+
+What if we want to keep it pink but get rid of the 'Comic Sans MS'? We can do that using git revert.
+
+	git revert bc7d994
+
+That didn't work.
+
+	error: could not revert bc7d994... Gave h1 Comic Sans MS
+	hint: after resolving the conflicts, mark the corrected paths
+	hint: with 'git add <paths>' or 'git rm <paths>'
+	hint: and commit the result with 'git commit'
+
+Probably becuase it was dealing witht the same element.
+Let's try instead adding a paragraph, then removing the pink commit.
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
