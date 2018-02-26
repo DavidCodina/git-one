@@ -55,6 +55,26 @@ nav ul li a {
 }
 
 
+#section_1 {
+	min-height: 200px;
+	border: 2px dashed blue;
+	margin-bottom: 1%;
+}
+
+#section_2 {
+	min-height: 200px;
+	border: 2px dashed green;
+	margin-bottom: 1%;
+}
+
+#section_3 {
+	min-height: 200px;
+	border: 2px dashed red;
+	margin-bottom: 1%;
+}
+
+
+
 
 
 
